@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendario de eventos</title>
+        <script src="/scripts.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+        enabled. Please enable
+        Javascript and reload this page!</h2></noscript>
+
+        <div id="calendar">
+            <div id="cal_month">
+                <a id="month_prev" onclick="loadPrevMonth()"><i class="material-icons">keyboard_arrow_left</i></a>
+                <div id="cal_date">
+                    <h1 id="month"></h1> 
+                    <h1 id="year"></h1>
+                </div>
+                <a id="month_next" onclick="loadNextMonth()"><i class="material-icons">keyboard_arrow_right</i></a>
+            </div>
+            <div id="cal_week">
+                <div id="cal_week_leyer_top">
+                    <ul class="week">
+                        <li style="grid-column-start:1;grid-column-end:2">L</li>
+                        <li style="grid-column-start:2;grid-column-end:3">M</li>
+                        <li style="grid-column-start:3;grid-column-end:4">X</li>
+                        <li style="grid-column-start:4;grid-column-end:5">J</li>
+                        <li style="grid-column-start:5;grid-column-end:6">V</li>
+                        <li style="grid-column-start:6;grid-column-end:7">S</li>
+                        <li style="grid-column-start:7;grid-column-end:8">D</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="cal_days"></div>
+        </div>
+        <div id="cal_event_list"></div>
+    </body>
+    <script>
+        let today=getToday();
+        fillMonth(today[0],today[1]);
+        connect();
+    </script>
+</html>

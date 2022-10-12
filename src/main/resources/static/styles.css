@@ -1,0 +1,170 @@
+.body {
+    display: grid;
+}
+/**
+ * Global
+ **/
+#calendar{
+    width: 500px;
+    height: auto;
+    background-color: black;
+    background-image: linear-gradient(#080708,#0a090c, #1e1e24);
+    border-radius: 15px;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    grid-row-start:1;
+    grid-row-end:2;
+}
+
+/**
+ * Año
+ **/
+#cal_date{
+    display: grid;
+    grid-column-start:3;
+    grid-column-end:6;
+    padding: 0px;
+    margin: 0px;
+    height: fit-content;
+}
+#month{
+    grid-column-start:1;
+    grid-column-end:2;
+    grid-row-start:1;
+    grid-row-end:2; 
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    height: fit-content;
+    cursor: default;
+}
+#year{
+    grid-column-start:1;
+    grid-column-end:2;
+    grid-row-start:2;
+    grid-row-end:3;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    height: fit-content;
+    cursor: default;
+}
+/**
+ * Mes
+ **/
+#cal_month {
+    display: grid;
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+    height: fit-content;
+}
+#month_prev{
+    grid-column-start:1;
+    grid-column-end:3;
+    height:auto;
+    cursor:pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#month_prev i{
+    vertical-align: middle;
+}
+#month_next{
+    grid-column-start:6;
+    grid-column-end:8;
+    height:auto;
+    cursor:pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#month_next i{
+    vertical-align: middle;
+}
+/**
+ * Semana
+ **/
+#cal_week{
+    margin-top: 0px;
+    background-image: linear-gradient(white, black);
+}
+
+
+ul.week {
+    margin-top: 0px;
+    padding-left: 0px;
+    /*background-color: #3D99CE;*/
+    background-image: linear-gradient(#0466c8, #023e7d);
+    text-align: center;
+    display: grid;
+    border-radius: 10px;
+}
+ul.week > li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+ul.week > li:hover {
+    border-radius: 10px;
+    cursor: default;
+}
+ul.week > li > a {
+    color: white;
+    text-decoration: none;
+}
+  /**
+ * Días
+ **/
+#cal_days{
+    display: grid;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+#cal_days a{
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    color: white;
+    cursor:pointer;
+}
+
+#cal_days a:hover{
+    background-color: gray;
+}
+
+/**
+ * Lista de eventos
+ **/
+#cal_event_list {
+    text-align: center;
+    margin-top: 15px;
+    vertical-align: top;
+    font-size: 22px;
+    display: grid;
+    color: black;
+    grid-row-start:2;
+    grid-row-end:3;
+}
+
+#cal_event_list a{
+    margin-top: 6px;
+}
+
+/**
+ * Utilidades
+ **/
+.dayFocus{
+    background-color: white;
+    color: black;
+}
+
+.dayNormal{
+    color:white;
+    background-color: transparent;
+}
+
+.dayMarked{
+    color: orange;
+}
